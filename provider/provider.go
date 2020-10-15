@@ -4,21 +4,21 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/cache"
-	"github.com/cnsilvan/UnblockNeteaseMusic/common"
-	"github.com/cnsilvan/UnblockNeteaseMusic/network"
-	kugou "github.com/cnsilvan/UnblockNeteaseMusic/provider/kugou"
-	"github.com/cnsilvan/UnblockNeteaseMusic/provider/kuwo"
-	"github.com/cnsilvan/UnblockNeteaseMusic/provider/migu"
+	"github.com/xiangism/UnblockNeteaseMusic/cache"
+	"github.com/xiangism/UnblockNeteaseMusic/common"
+	"github.com/xiangism/UnblockNeteaseMusic/network"
+	kugou "github.com/xiangism/UnblockNeteaseMusic/provider/kugou"
+	"github.com/xiangism/UnblockNeteaseMusic/provider/kuwo"
+	"github.com/xiangism/UnblockNeteaseMusic/provider/migu"
 
-	//"github.com/cnsilvan/UnblockNeteaseMusic/provider/qq"
+	//"github.com/xiangism/UnblockNeteaseMusic/provider/qq"
 	"net/http"
 	"net/url"
 	"strconv"
 	"strings"
 	"time"
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/utils"
+	"github.com/xiangism/UnblockNeteaseMusic/utils"
 )
 
 func UpdateCacheMd5(music common.SearchMusic, md5 string) {

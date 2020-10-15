@@ -7,14 +7,14 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/config"
-	"github.com/cnsilvan/UnblockNeteaseMusic/version"
+	"github.com/xiangism/UnblockNeteaseMusic/config"
+	"github.com/xiangism/UnblockNeteaseMusic/version"
 
 	//_ "github.com/mkevac/debugcharts" // 可选，添加后可以查看几个实时图表数据
 	//_ "net/http/pprof" // 必须，引入 pprof 模块
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/host"
-	"github.com/cnsilvan/UnblockNeteaseMusic/proxy"
+	"github.com/xiangism/UnblockNeteaseMusic/host"
+	"github.com/xiangism/UnblockNeteaseMusic/proxy"
 )
 
 func main() {

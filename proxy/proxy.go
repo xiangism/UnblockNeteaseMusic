@@ -13,11 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/common"
-	"github.com/cnsilvan/UnblockNeteaseMusic/config"
-	"github.com/cnsilvan/UnblockNeteaseMusic/network"
-	"github.com/cnsilvan/UnblockNeteaseMusic/processor"
-	"github.com/cnsilvan/UnblockNeteaseMusic/version"
+	"github.com/xiangism/UnblockNeteaseMusic/common"
+	"github.com/xiangism/UnblockNeteaseMusic/config"
+	"github.com/xiangism/UnblockNeteaseMusic/network"
+	"github.com/xiangism/UnblockNeteaseMusic/processor"
+	"github.com/xiangism/UnblockNeteaseMusic/version"
 )
 
 type HttpHandler struct{}
