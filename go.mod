@@ -1,4 +1,4 @@
-module github.com/cnsilvan/UnblockNeteaseMusic
+module github.com/xiangism/UnblockNeteaseMusic
 
 go 1.15
 
