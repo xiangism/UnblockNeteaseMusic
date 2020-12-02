@@ -205,6 +205,9 @@ func getToken(keyword string) string {
 		log.Println(err)
 		return token
 	}
+	if resp == nil || resp.Body == nil {
+		return ""
+	}
 	defer resp.Body.Close()
 	cookies := resp.Header.Get("set-cookie")
 	if strings.Contains(cookies, "kw_token") {
