@@ -35,6 +35,11 @@ func SearchSong(song common.SearchSong) (songs []*common.Song) {
 		log.Println(err)
 		return songs
 	}
+
+	if resp == nil || resp.Body == nil {
+		return songs
+	}
+
 	defer resp.Body.Close()
 	body, err := network.StealResponseBody(resp)
 	if err != nil {
