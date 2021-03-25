@@ -193,7 +193,7 @@ func ParseSong(searchSong common.SearchSong) *common.Song {
 
 	for _, item := range songs {
 		song := GetSongUrl(common.SearchMusic{Quality: searchSong.Quality}, item)
-		if len(song.Url) > 0 {
+		if len(song.Url) > 0 && !strings.Contains(song.Url, "nil") {
 			return song
 		}
 	}
