@@ -189,12 +189,17 @@ func GetSongUrl(searchSong common.SearchMusic, song *common.Song) *common.Song {
 	return song
 }
 func ParseSong(searchSong common.SearchSong) *common.Song {
-	song := &common.Song{}
 	songs := SearchSong(searchSong)
-	if len(songs) > 0 {
-		song = GetSongUrl(common.SearchMusic{Quality: searchSong.Quality}, songs[0])
+
+	for _, item := range songs {
+		song := GetSongUrl(common.SearchMusic{Quality: searchSong.Quality}, item)
+		if len(song.Url) > 0 {
+			return song
+		}
 	}
-	return song
+
+	e := &common.Song{}
+	return e
 }
 func getToken(keyword string) string {
 	var token = ""
