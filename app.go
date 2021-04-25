@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"git.lakatv.com/xbc/go-lib/log"
-	"github.com/cnsilvan/UnblockNeteaseMusic/common"
-	"github.com/cnsilvan/UnblockNeteaseMusic/config"
-	"github.com/cnsilvan/UnblockNeteaseMusic/provider"
-	//kuwo "github.com/cnsilvan/UnblockNeteaseMusic/provider/kugou"
-	"github.com/cnsilvan/UnblockNeteaseMusic/provider/kuwo"
-	"github.com/cnsilvan/UnblockNeteaseMusic/proxy"
-	"github.com/cnsilvan/UnblockNeteaseMusic/version"
+	"github.com/xiangism/UnblockNeteaseMusic/common"
+	"github.com/xiangism/UnblockNeteaseMusic/config"
+	"github.com/xiangism/UnblockNeteaseMusic/provider"
+	//kuwo "github.com/xiangism/UnblockNeteaseMusic/provider/kugou"
+	"github.com/xiangism/UnblockNeteaseMusic/provider/kuwo"
+	"github.com/xiangism/UnblockNeteaseMusic/proxy"
+	"github.com/xiangism/UnblockNeteaseMusic/version"
 	"os"
 	"os/signal"
 	"syscall"
@@ -18,7 +18,7 @@ import (
 	//_ "github.com/mkevac/debugcharts" // 可选，添加后可以查看几个实时图表数据
 	//_ "net/http/pprof" // 必须，引入 pprof 模块
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/host"
+	"github.com/xiangism/UnblockNeteaseMusic/host"
 )
 
 func main() {

@@ -9,9 +9,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/cnsilvan/UnblockNeteaseMusic/common"
-	"github.com/cnsilvan/UnblockNeteaseMusic/network"
-	"github.com/cnsilvan/UnblockNeteaseMusic/utils"
+	"github.com/xiangism/UnblockNeteaseMusic/common"
+	"github.com/xiangism/UnblockNeteaseMusic/network"
+	"github.com/xiangism/UnblockNeteaseMusic/utils"
 )
 
 type KuWo struct{}

@@ -2,7 +2,7 @@ package cache
 
 import (
 	"fmt"
-	"github.com/cnsilvan/UnblockNeteaseMusic/common"
+	"github.com/xiangism/UnblockNeteaseMusic/common"
 	"strconv"
 	"sync"
 )
