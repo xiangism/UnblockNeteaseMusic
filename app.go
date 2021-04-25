@@ -2,23 +2,45 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"git.lakatv.com/xbc/go-lib/log"
+	"github.com/cnsilvan/UnblockNeteaseMusic/common"
+	"github.com/cnsilvan/UnblockNeteaseMusic/config"
+	"github.com/cnsilvan/UnblockNeteaseMusic/provider"
+	//kuwo "github.com/cnsilvan/UnblockNeteaseMusic/provider/kugou"
+	"github.com/cnsilvan/UnblockNeteaseMusic/provider/kuwo"
+	"github.com/cnsilvan/UnblockNeteaseMusic/proxy"
+	"github.com/cnsilvan/UnblockNeteaseMusic/version"
 	"os"
 	"os/signal"
 	"syscall"
-
-	"github.com/xiangism/UnblockNeteaseMusic/config"
-	"github.com/xiangism/UnblockNeteaseMusic/version"
+	"time"
 
 	//_ "github.com/mkevac/debugcharts" // 可选，添加后可以查看几个实时图表数据
 	//_ "net/http/pprof" // 必须，引入 pprof 模块
 
-	"github.com/xiangism/UnblockNeteaseMusic/host"
-	"github.com/xiangism/UnblockNeteaseMusic/proxy"
+	"github.com/cnsilvan/UnblockNeteaseMusic/host"
 )
 
 func main() {
 
+	key := common.SearchSong{}
+	key.Keyword = "大海"
+
+	//obj := kuwo.KuGou{}
+	obj := kuwo.KuWo{}
+	rs := obj.SearchSong(key)
+
+	r := obj.GetSongUrl(common.SearchMusic{}, rs[0])
+
+	//obj := migu.Migu{}
+	//rs := obj.SearchSong(key)
+
+	log.Info4("main", "music", "r", r)
+
+	time.Sleep(time.Second*2)
+}
+
+func startHttp() {
 	//log.Println("--------------------Version--------------------")
 	//fmt.Println(version.AppVersion())
 	defer func() {
@@ -61,13 +83,16 @@ func main() {
 			}()
 			signal.Notify(signalChan, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGSEGV)
 			proxy.InitProxy()
+			provider.Init()
 			<-exit
 			log.Println("exiting UnblockNeteaseMusic")
 		}
 	} else {
 		fmt.Println(version.AppVersion())
 	}
+
 }
+
 func restoreHosts() {
 	if *config.Mode == 1 {
 		log.Println("restoreHosts...")

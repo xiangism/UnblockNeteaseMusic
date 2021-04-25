@@ -3,7 +3,7 @@ package kuwo
 import (
 	"math/big"
 
-	"github.com/xiangism/UnblockNeteaseMusic/pool"
+	"github.com/cnsilvan/UnblockNeteaseMusic/pool"
 )
 
 //

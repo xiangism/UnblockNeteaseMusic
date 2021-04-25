@@ -15,13 +15,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xiangism/UnblockNeteaseMusic/cache"
-	"github.com/xiangism/UnblockNeteaseMusic/common"
-	"github.com/xiangism/UnblockNeteaseMusic/config"
-	"github.com/xiangism/UnblockNeteaseMusic/network"
-	"github.com/xiangism/UnblockNeteaseMusic/processor/crypto"
-	"github.com/xiangism/UnblockNeteaseMusic/provider"
-	"github.com/xiangism/UnblockNeteaseMusic/utils"
+	"github.com/cnsilvan/UnblockNeteaseMusic/cache"
+	"github.com/cnsilvan/UnblockNeteaseMusic/common"
+	"github.com/cnsilvan/UnblockNeteaseMusic/config"
+	"github.com/cnsilvan/UnblockNeteaseMusic/network"
+	"github.com/cnsilvan/UnblockNeteaseMusic/processor/crypto"
+	"github.com/cnsilvan/UnblockNeteaseMusic/provider"
+	"github.com/cnsilvan/UnblockNeteaseMusic/utils"
 	"golang.org/x/text/width"
 )
 
