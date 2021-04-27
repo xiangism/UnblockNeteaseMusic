@@ -37,7 +37,7 @@ func (m *KuWo) SearchSong(song common.SearchSong) (songs []*common.Song) {
 		return songs
 	}
 	if resp == nil || resp.Body == nil {
-		log.Info4("music_e", "SearchSong resp nil")
+		log.Info4("music_e", "SearchSong resp nil", "key", song.Keyword)
 		return songs
 	}
 	defer resp.Body.Close()
