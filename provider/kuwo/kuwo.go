@@ -2,16 +2,15 @@ package kuwo
 
 import (
 	"encoding/base64"
-	"log"
+	"git.lakatv.com/xbc/go-lib/log"
+	"github.com/xiangism/UnblockNeteaseMusic/common"
+	"github.com/xiangism/UnblockNeteaseMusic/network"
+	"github.com/xiangism/UnblockNeteaseMusic/utils"
 	"net/http"
 	"net/url"
 	"regexp"
 	"sort"
 	"strings"
-
-	"github.com/xiangism/UnblockNeteaseMusic/common"
-	"github.com/xiangism/UnblockNeteaseMusic/network"
-	"github.com/xiangism/UnblockNeteaseMusic/utils"
 )
 
 type KuWo struct{}
@@ -34,7 +33,11 @@ func (m *KuWo) SearchSong(song common.SearchSong) (songs []*common.Song) {
 	}
 	resp, err := network.Request(&clientRequest)
 	if err != nil {
-		log.Println(err)
+		//log.Println(err)
+		return songs
+	}
+	if resp == nil || resp.Body == nil {
+		log.Info4("music_e", "SearchSong resp nil")
 		return songs
 	}
 	defer resp.Body.Close()
@@ -205,6 +208,9 @@ func getToken(keyword string) string {
 	resp, err := network.Request(&clientRequest)
 	if err != nil {
 		log.Println(err)
+		return token
+	}
+	if resp == nil || resp.Body == nil {
 		return token
 	}
 	defer resp.Body.Close()
