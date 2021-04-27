@@ -211,6 +211,7 @@ func getToken(keyword string) string {
 		return token
 	}
 	if resp == nil || resp.Body == nil {
+		log.Info4("music_e", "get token resp is nill", "key", keyword)
 		return token
 	}
 	defer resp.Body.Close()
